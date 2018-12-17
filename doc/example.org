@@ -1,0 +1,37 @@
+#+TITLE: An example using the interactive Flint
+#+DATE: Dec 2018
+#+OPTIONS: author:nil H:2 num:t toc:nil
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+
+* Overview
+To describe a session in which the interactive Flint controls a device through Wi-Fi,
+here we give an example with the Raspberry Pi Mouse 2.
+
+The following figure illustrates the components in the session and interaction between them.
+[[file:~/Dropbox/interactive-Flint-ex.jpg]]
+* Device in detail
+The Raspberry Pi Mouse 2 has two wheels to be controlled by its API, and four optical sensors measuring distance from obstacles in front of it.
+You can find the device's specification at <http://resources.rt-net.jp/products/RPiM/RaspberryPiMouseV2_20161207.pdf>.
+* Mathematical models
+We have tested a couple of mathematical models written in PHML:
+- rtm0.phml
+- rtm1.phml
+They are attached as separate files.
+* Data from device to Flint
+Flint receives input data from a device driver program, which runs on Raspberry Pi Mouse 2.
+The driver sents messages in an arbitrary frequency, each time including
+- A universally unique identifier (UUID) to identify the device,
+- the fixed-length name of a sensor measuring the following value,
+- time (in seconds, elapsed since the session has started) when measuring the following value, and
+- a  representing reciprocals for distances (in an unspecified unit) from obstacles.
+The last two elements are in the double-precision floating point number format.
+* Data from Flint to device
+Flint sents signals to change the speed of the device's wheels when needed.
+Each signal consists of:
+- A UUID to specify the target device,
+- the fixed-length name of the target wheel,
+- time (in seconds, elapsed since the session has started) when assigning the following value, and
+- angular velocity.
+The last two elements are in the double-precision floating point number format.
