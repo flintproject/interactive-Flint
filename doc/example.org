@@ -10,7 +10,7 @@ To describe a session in which the interactive Flint controls a device through W
 here we give an example with the Raspberry Pi Mouse 2.
 
 The following figure illustrates the components in the session and interaction between them.
-[[file:~/Dropbox/interactive-Flint-ex.jpg]]
+[[./interactive-Flint-ex.png]]
 * Device in detail
 The Raspberry Pi Mouse 2 has two wheels to be controlled by its API, and four optical sensors measuring distance from obstacles in front of it.
 You can find the device's specification at <http://resources.rt-net.jp/products/RPiM/RaspberryPiMouseV2_20161207.pdf>.

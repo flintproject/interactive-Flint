@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<is:insilico-model xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:is="http://www.physiome.jp/ns/insilicoml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.physiome.jp/ns/insilicoml-1.0 insilicoml.xsd" version="1.0">
+  <is:header>
+    <is:numerical-configuration>
+      <is:time-discretization unit-id="3" evolution="true">
+        <is:step>0.0001</is:step>
+      </is:time-discretization>
+      <is:simulation-time-span unit-id="3">600</is:simulation-time-span>
+      <is:algorithm>
+        <is:integration name="euler"/>
+      </is:algorithm>
+    </is:numerical-configuration>
+  </is:header>
+  <is:unit-set>
+    <is:unit unit-id="0">
+      <is:name>dimensionless</is:name>
+    </is:unit>
+    <is:unit unit-id="1">
+      <is:name>meter</is:name>
+    </is:unit>
+    <is:unit unit-id="2">
+      <is:name>kilogram</is:name>
+    </is:unit>
+    <is:unit unit-id="3">
+      <is:name>second</is:name>
+    </is:unit>
+    <is:unit unit-id="4">
+      <is:name>ampere</is:name>
+    </is:unit>
+    <is:unit unit-id="5">
+      <is:name>kelvin</is:name>
+    </is:unit>
+    <is:unit unit-id="6">
+      <is:name>mole</is:name>
+    </is:unit>
+    <is:unit unit-id="7">
+      <is:name>candela</is:name>
+    </is:unit>
+  </is:unit-set>
+  <is:edge-set />
+  <is:module-set>
+    <is:module module-id="9e851d18-fe3d-11e6-858b-47c13b996815" type="functional-unit">
+      <is:property>
+        <is:name>a</is:name>
+        <is:capsulation state="false" />
+        <is:template state="false" />
+        <is:instance state="false" />
+        <is:keyword-set />
+        <is:track />
+        <is:frame-coordinate />
+        <is:description>a</is:description>
+      </is:property>
+      <is:port-set />
+      <is:physical-quantity-set>
+        <is:physical-quantity type="variable-parameter" physical-quantity-id="1">
+          <is:name>a</is:name>
+          <is:implementation>
+            <is:definition format="mathml" type="ae">
+              <m:math>
+                <m:apply>
+                  <m:eq />
+                  <m:ci>a</m:ci>
+                  <m:apply>
+                    <m:plus />
+                    <m:apply>
+                      <m:sin />
+                      <m:ci>time</m:ci>
+                    </m:apply>
+                    <m:cn>1</m:cn>
+                  </m:apply>
+                </m:apply>
+              </m:math>
+            </is:definition>
+          </is:implementation>
+          <is:max-delay>1</is:max-delay>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>An oscillation</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="variable-parameter" physical-quantity-id="2">
+          <is:name>b</is:name>
+          <is:implementation>
+            <is:definition format="mathml" type="ae">
+              <m:math>
+                <m:apply>
+                  <m:eq />
+                  <m:ci>b</m:ci>
+                  <m:apply>
+                    <m:csymbol>Delay</m:csymbol>
+                    <m:ci>a</m:ci>
+                    <m:cn>1</m:cn>
+                  </m:apply>
+                </m:apply>
+              </m:math>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Another oscillation</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="timeseries" physical-quantity-id="3">
+          <is:name>sensor0</is:name>
+          <is:implementation>
+            <is:definition type="assign" sub-type="timeseries" format="reference">
+              <is:reference timeseries-id="1" element-id="s0"/>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Sensor input 0</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="timeseries" physical-quantity-id="4">
+          <is:name>sensor1</is:name>
+          <is:implementation>
+            <is:definition type="assign" sub-type="timeseries" format="reference">
+              <is:reference timeseries-id="1" element-id="s1"/>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Sensor input 1</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="timeseries" physical-quantity-id="5">
+          <is:name>sensor2</is:name>
+          <is:implementation>
+            <is:definition type="assign" sub-type="timeseries" format="reference">
+              <is:reference timeseries-id="1" element-id="s2"/>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Sensor input 2</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="timeseries" physical-quantity-id="6">
+          <is:name>sensor3</is:name>
+          <is:implementation>
+            <is:definition type="assign" sub-type="timeseries" format="reference">
+              <is:reference timeseries-id="1" element-id="s3"/>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Sensor input 3</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="variable-parameter" physical-quantity-id="7">
+          <is:name>l0</is:name>
+          <is:implementation>
+            <is:definition format="mathml" type="ae">
+              <m:math>
+                <m:apply>
+                  <m:eq />
+                  <m:ci>l0</m:ci>
+                  <m:apply>
+                    <m:minus/>
+                    <m:apply>
+                      <m:times/>
+                      <m:ci>a</m:ci>
+                      <m:cn>500</m:cn>
+                    </m:apply>
+                    <m:apply>
+                      <m:plus/>
+                      <m:ci>sensor0</m:ci>
+                      <m:apply>
+                        <m:times/>
+                        <m:ci>sensor1</m:ci>
+                        <m:cn>3</m:cn>
+                      </m:apply>
+                      <m:ci>sensor2</m:ci>
+                      <m:ci>sensor3</m:ci>
+                    </m:apply>
+                  </m:apply>
+                </m:apply>
+              </m:math>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Angular velocity of the left wheel</is:description>
+        </is:physical-quantity>
+        <is:physical-quantity type="variable-parameter" physical-quantity-id="8">
+          <is:name>r0</is:name>
+          <is:implementation>
+            <is:definition format="mathml" type="ae">
+              <m:math>
+                <m:apply>
+                  <m:eq />
+                  <m:ci>r0</m:ci>
+                  <m:apply>
+                    <m:minus/>
+                    <m:apply>
+                      <m:times/>
+                      <m:ci>b</m:ci>
+                      <m:cn>500</m:cn>
+                    </m:apply>
+                    <m:apply>
+                      <m:plus/>
+                      <m:ci>sensor0</m:ci>
+                      <m:ci>sensor1</m:ci>
+                      <m:apply>
+                        <m:times/>
+                        <m:ci>sensor2</m:ci>
+                        <m:cn>3</m:cn>
+                      </m:apply>
+                      <m:ci>sensor3</m:ci>
+                    </m:apply>
+                  </m:apply>
+                </m:apply>
+              </m:math>
+            </is:definition>
+          </is:implementation>
+          <is:dimension type="scalar" />
+          <is:value-type-set>
+            <is:value-type unit-id="0" precision="double" />
+          </is:value-type-set>
+          <is:description>Angular velocity of the right wheel</is:description>
+        </is:physical-quantity>
+      </is:physical-quantity-set>
+      <is:timeseries-set>
+        <is:timeseries timeseries-id="1" type="ipc" url="fppp:///ed17af54-f415-11e6-a239-e39cfbb702cb" />
+      </is:timeseries-set>
+    </is:module>
+  </is:module-set>
+</is:insilico-model>
