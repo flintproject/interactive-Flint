@@ -6,8 +6,8 @@ which allows real-time simulation assigning input signals from devices to a vari
 model and sending current values of simulated variables as output signals.
 
 * Examples in action
-https://www.youtube.com/watch?v=1Gky0HjTe98
-https://www.youtube.com/watch?v=zT2db9oSYck
+- https://www.youtube.com/watch?v=1Gky0HjTe98
+- https://www.youtube.com/watch?v=zT2db9oSYck
 
 * Documentation
 Documents on the above examples are in [[doc/]].
